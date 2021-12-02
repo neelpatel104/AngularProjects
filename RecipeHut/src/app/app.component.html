@@ -8,15 +8,40 @@
 			</button>
 			<img id="logo" src="../assets/logo.png"/>
 		</div>
-    	<div class="search-menu-container" fxLayout="row" fxLayoutAlign="space-between center">
-			<div class="search-container" fxHide.lt-sm="true">
-
+    	<div class="search-menu-container" fxLayout="row" fxLayoutAlign="space-between end">
+			<div class="search-main-container" fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center">
+				<div class="search-bar-icon-container" fxLayout="row" fxLayoutAlign="center center">
+					<input type="text" class="search-bar" #recipeSearchQueryInput
+						   placeholder="Summon what you want to eat" 
+						   [(ngModel)]="recipeSearchQuery"
+						   (input)="recipeSearchQueryChanged()"/>
+					<button mat-icon-button class="search-button">
+						<mat-icon>
+							search 
+						</mat-icon>
+					</button>
+				</div>
+				<div class="autocomplete-container" *ngIf="recipeSearchQuery != ''" fxLayout="column" fxLayoutAlign="start center">
+					<h4 id="amount-recipes"> {{recipeSearchQueryChanged().length}} recipes found </h4>
+					<div class="autocomplete-single-recipe" *ngFor="let recipe of recipeSearchQueryChanged()" fxLayout="row" fxLayoutAlign="space-between center"> 
+						<img src="{{recipe.recipe.image}}" class="image"/>
+						<div class="info-container">
+							<h3> {{ recipe.recipe.label }} </h3>
+							<p> <span><b>{{ recipe.recipe.calories | number: '1.0-0' }}</b> Calories </span>  &#9679;  <span><b>{{ recipe.recipe.ingredientLines.length }}</b> Ingredients</span> &#9679; <span><b>{{ recipe.recipe.totalTime }}</b> Minutes</span> </p>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="menu-container" fxHide.lt-lg="true" fxLayout="row" fxLayoutAlign="center center">
-				<a *ngFor="let num of [1,2,3,4,5]" fxLayoutAlign="center center"> Link {{num}} </a>
+				<a fxLayoutAlign="center center"> Home </a>
+				<a fxLayoutAlign="center center"> Recipes </a>
+				<a fxLayoutAlign="center center"> About Us </a>
+				<a fxLayoutAlign="center center"> Contact Us </a>
+
 			</div>
 			<button class="login-button">
-				Log In</button>
+				Log In
+			</button>
       	</div>
   	</nav>
 </main>

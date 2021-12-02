@@ -3,13 +3,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButton, MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule} from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 
 
 // Component Imports
 import { AppComponent } from './app.component';
+
+// Service imports 
 
 
 
@@ -22,7 +26,9 @@ import { AppComponent } from './app.component';
 		BrowserAnimationsModule,
 		BrowserModule,
 		FlexLayoutModule,
+		FormsModule,
 		MatButtonModule,
+		MatChipsModule,
 		MatIconModule
 	],
 	providers: [],
