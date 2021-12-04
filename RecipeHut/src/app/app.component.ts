@@ -19,6 +19,9 @@ export class AppComponent {
 	}
 
 	recipeSearchQueryChanged(): Array<any>{
+		if (this.recipeSearchQuery == ''){
+			return [];
+		}
 		return this.recipes.filter(element => element.recipe.label.startsWith(this.recipeSearchQuery) || element.recipe.label.includes(this.recipeSearchQuery));
 	}
 }

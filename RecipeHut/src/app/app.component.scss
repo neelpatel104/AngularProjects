@@ -26,7 +26,6 @@ main {
         .search-menu-container{
             width:fit-content;
             height:80%;
-            // background:yellow;
             .search-main-container{
                 width: 500px;
                 height:100%;
@@ -36,7 +35,10 @@ main {
                     width:80%;
                     min-height:100%;
                     background:#EEEEEE;
-                    border-radius:100px;
+                    border-radius:25px;
+                    transition: 0.4s;
+                    border: 1px solid transparent;
+                    float:right;
 
                     .search-bar {
                         width: calc(100% - 80px);
@@ -47,7 +49,7 @@ main {
                         font-size:17px;
                         background:transparent;
                     }
-
+                    
                     .search-button {
                         height:100%;
                         width:52px;
@@ -56,21 +58,38 @@ main {
 
                 }
 
+                .search-bar-icon-container-focused{
+                    background:#d3d3d3;
+                    border-top: 1px solid #d3d3d3;
+                    border-left: 1px solid #d3d3d3;
+                    border-right: 1px solid #d3d3d3;
+                    border-radius: 25px 25px 0 0;
+                    transition: 0.1s;
+                    float:right;
+                }
+
                 .autocomplete-container{
                     width:80%;
-                    min-height: fit-content;
-                    border-radius:25px;
-                    margin-top:8px;
-                    padding:8px;
-                    // background:#EEEEEE;
-
+                    height:0;
+                    border-radius:0 0 25px 25px;
+                    box-sizing: border-box;
+                    overflow:hidden;
+                    padding: 0 8px 0 8px;
+                    background:#EEEEEE;
+                    transition: 0.1s;
+                    border: 0px solid transparent;
+                    float:right;
+                   
                     #amount-recipes {
                         width: 100%;
+                        font-weight:300;
+                        text-align:center;
+                        margin:4px;
                     }
             
                     .autocomplete-single-recipe {
                         height:100px;
-                        width:calc(100% - 2px);
+                        width:100%;
                         margin-top: 12px;
                         border-radius:15px;
                         background:#FFFFFF;
@@ -83,8 +102,9 @@ main {
 
                         .info-container {
                             width: calc(100% - 110px);
-                            height:80%;
-                            padding-right:0 8px 12px 0;
+                            box-sizing: border-box;
+                            height:90%;
+                            padding:0 12px 0 0;
                             // background:red;
 
                             h3, p {
@@ -93,12 +113,12 @@ main {
                             }
 
                             h3 {
-                                white-space:normal;
-                                word-break: break-word;
+                                // white-space:normal;
+                                // word-break: break-word;
                                 overflow: hidden;
                                 // hyphens: auto;
-                                overflow-wrap: break-word;
-                                text-overflow: ellipsis;
+                                // overflow-wrap: break-word;
+                                // text-overflow: ellipsis;
                                 display: -webkit-box;
                                 -webkit-line-clamp: 1; /* number of lines to show */
                                         line-clamp: 1; 
@@ -106,12 +126,41 @@ main {
                                 font-weight:400;
                             }
 
+                            div {
+                                height:fit-content;
+                                // background:blue;
+                            }
+
                             p {
                                 font-size:10px;
                                 font-weight:300;
                             }
+
+                            a {
+                                margin:0;
+                                padding:0;
+                                text-decoration: none;
+                                color: #000000;
+                                font-weight:300;
+                                font-size:15px;
+                                // background:yellow;
+                            }
+
                         }
                     }
+                }
+
+                .autocomplete-container-expanded {
+                    height: fit-content;
+                    max-height:80vh;
+                    padding:8px 8px 25px 8px;
+                    border-radius:0 0 25px 25px;
+                    transition: 0.2s;
+                    overflow-y:scroll;
+                    border-bottom: 1px solid #d3d3d3;
+                    border-left: 1px solid #d3d3d3;
+                    border-right: 1px solid #d3d3d3;
+                    float:right;
                 }
             }
             .menu-container{
@@ -145,9 +194,9 @@ main {
                 outline:none;
                 border:none;
                 color:white;
-                background: #FC466B;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to top right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to top right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #b92b27;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to bottom right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to bottom right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
                 cursor:pointer; 
                 transition: 0.3s;;
                 &:hover{

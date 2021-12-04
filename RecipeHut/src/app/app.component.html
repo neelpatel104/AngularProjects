@@ -9,8 +9,9 @@
 			<img id="logo" src="../assets/logo.png"/>
 		</div>
     	<div class="search-menu-container" fxLayout="row" fxLayoutAlign="space-between end">
-			<div class="search-main-container" fxHide.lt-sm="true" fxLayout="column" fxLayoutAlign="space-between center">
-				<div class="search-bar-icon-container" fxLayout="row" fxLayoutAlign="center center">
+			<div class="search-main-container" fxHide.lt-sm="true">
+				<div class="search-bar-icon-container" fxLayout="row" fxLayoutAlign="center center"
+				[ngClass]="{'search-bar-icon-container-focused' : recipeSearchQuery != ''}">
 					<input type="text" class="search-bar" #recipeSearchQueryInput
 						   placeholder="Summon what you want to eat" 
 						   [(ngModel)]="recipeSearchQuery"
@@ -21,13 +22,19 @@
 						</mat-icon>
 					</button>
 				</div>
-				<div class="autocomplete-container" *ngIf="recipeSearchQuery != ''" fxLayout="column" fxLayoutAlign="start center">
-					<h4 id="amount-recipes"> {{recipeSearchQueryChanged().length}} recipes found </h4>
+				<div class="autocomplete-container"  fxLayout="column" fxLayoutAlign="start center"
+				[ngClass]="{'autocomplete-container-expanded': recipeSearchQuery != ''}">
+					<h3 id="amount-recipes"
+						[ngStyle]="{'opacity': recipeSearchQuery != '' ? '1' : '0', 'transition': '0.1s'}"> 
+						<b>{{recipeSearchQueryChanged().length}}</b> {{recipeSearchQueryChanged().length == 1 ? 'Recipe' : 'Recipes'}} Found </h3>
 					<div class="autocomplete-single-recipe" *ngFor="let recipe of recipeSearchQueryChanged()" fxLayout="row" fxLayoutAlign="space-between center"> 
 						<img src="{{recipe.recipe.image}}" class="image"/>
-						<div class="info-container">
-							<h3> {{ recipe.recipe.label }} </h3>
-							<p> <span><b>{{ recipe.recipe.calories | number: '1.0-0' }}</b> Calories </span>  &#9679;  <span><b>{{ recipe.recipe.ingredientLines.length }}</b> Ingredients</span> &#9679; <span><b>{{ recipe.recipe.totalTime }}</b> Minutes</span> </p>
+						<div class="info-container" fxLayout="column" fxLayoutAlign="space-between start">
+							<div>
+								<h3> {{ recipe.recipe.label }} </h3>
+								<p><span><b>{{ recipe.recipe.ingredientLines.length }}</b> Ingredients</span> &#9679; <span><b>{{ recipe.recipe.totalTime }}</b> Minutes</span> </p>
+							</div>
+							<a fxLayout="row" fxLayoutAlign="center center" href="home"> Cook it <mat-icon> chevron_right</mat-icon> </a>
 						</div>
 					</div>
 				</div>
