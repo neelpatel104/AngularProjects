@@ -2,7 +2,7 @@ main {
     width: 100%;
     height:fit-content;
     font-family: 'Poppins', sans-serif;
-    // background:#a9a9a9;
+    
 
     nav {
         width:90%;
@@ -53,7 +53,7 @@ main {
                     .searchicon-button {
                         height:100%;
                         width:52px;
-                        // background:green;
+                        
                     }
 
                     &-focused{
@@ -106,13 +106,13 @@ main {
                         &-info{
                             width: calc(100% - 135px);
                             height:100%;
-                            // background:red;
+                            
 
                             &-container{
                                 width:90%;
                                 height:90%;
                                 box-sizing: border-box;
-                                // background:blue;
+                                
 
                                 .label {
                                     display: -webkit-box;
@@ -125,7 +125,7 @@ main {
                                     width:100%;
                                     box-sizing: border-box;
                                     height:40px;
-                                    // background:red;
+                                    
 
                                     .stat {
                                         width:30%;
@@ -152,7 +152,7 @@ main {
                                     font-size:13px;
 
                                     &-icon {
-                                        // background:red;
+                                        
                                         font-size:15px;
                                     }
                                 }
@@ -179,7 +179,7 @@ main {
             .nav-items-container{
                 width:fit-content;
                 height:100%;
-                // background:green;
+                
                 a {
                     width:fit-content;
                     height:100%;
@@ -188,9 +188,6 @@ main {
                     border-bottom: 1px solid transparent;
                     transition: 0.3s;
                     cursor:pointer; 
-
-                    // background:yellow;
-                    // border: 1px solid black;
 
                     &:hover {
                         border-bottom: 1px solid red;
@@ -207,9 +204,9 @@ main {
                 outline:none;
                 border:none;
                 color:white;
-                background: #b92b27;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to bottom right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to bottom right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                background: #b92b27;  
+                background: -webkit-linear-gradient(to bottom right, #1565C0, #b92b27);  
+                background: linear-gradient(to bottom right, #1565C0, #b92b27); 
                 cursor:pointer; 
                 transition: 0.3s;;
                 &:hover{
