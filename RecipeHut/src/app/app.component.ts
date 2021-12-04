@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title: string = 'RecipeHut';
-	recipeSearchQuery: string = 'Tarte';
+	recipeSearchQuery: string = '';
 	recipes: Array<any> = [];
 
 	constructor(private recipeService:RecipeService){}

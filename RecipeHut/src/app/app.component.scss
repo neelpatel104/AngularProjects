@@ -8,39 +8,39 @@ main {
         width:90%;
         height:65px;
         padding: 4px 0 0 0;
-        // border: 1px solid black;
 
-        .menu-button-icon-container{
+        .menu-logo-container{
             width:fit-content;
             height:100%;
-            // background:red;
+
             #logo{
                 width:auto;
                 height:80%;
                 margin-left:8px;
-                // background:blue;
                 object-fit:contain;
             }
         }
 
-        .search-menu-container{
+        .searchbox-navitems-login-container{
             width:fit-content;
             height:80%;
-            .search-main-container{
+            
+            .searchbox-autocomplete-container{
                 width: 500px;
                 height:100%;
                 overflow:show;
-                // background:blue;
-                .search-bar-icon-container {
+               
+                .searchbox-searchicon-container {
                     width:80%;
                     min-height:100%;
-                    background:#EEEEEE;
                     border-radius:25px;
                     transition: 0.4s;
                     border: 1px solid transparent;
-                    float:right;
+                    margin:auto;
+                    float: right;
+                    background:#EEEEEE;
 
-                    .search-bar {
+                    .searchbox {
                         width: calc(100% - 80px);
                         height:100%;
                         border:none;
@@ -50,22 +50,23 @@ main {
                         background:transparent;
                     }
                     
-                    .search-button {
+                    .searchicon-button {
                         height:100%;
                         width:52px;
                         // background:green;
                     }
 
-                }
+                    &-focused{
+                        background:#d3d3d3;
+                        border-top: 1px solid #d3d3d3;
+                        border-left: 1px solid #d3d3d3;
+                        border-right: 1px solid #d3d3d3;
+                        border-radius: 25px 25px 0 0;
+                        transition: 0.1s;
+                        float:right;
+                    }
+    
 
-                .search-bar-icon-container-focused{
-                    background:#d3d3d3;
-                    border-top: 1px solid #d3d3d3;
-                    border-left: 1px solid #d3d3d3;
-                    border-right: 1px solid #d3d3d3;
-                    border-radius: 25px 25px 0 0;
-                    transition: 0.1s;
-                    float:right;
                 }
 
                 .autocomplete-container{
@@ -75,95 +76,107 @@ main {
                     box-sizing: border-box;
                     overflow:hidden;
                     padding: 0 8px 0 8px;
-                    background:#EEEEEE;
                     transition: 0.1s;
                     border: 0px solid transparent;
                     float:right;
+                    background:#EEEEEE;
+
                    
-                    #amount-recipes {
+                    &-amount-recipes {
                         width: 100%;
                         font-weight:300;
                         text-align:center;
                         margin:4px;
                     }
             
-                    .autocomplete-single-recipe {
-                        height:100px;
+                    &-recipe {
+                        height:125px;
                         width:100%;
                         margin-top: 12px;
                         border-radius:15px;
                         background:#FFFFFF;
-                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;                        
-                        .image {
-                            width:100px;
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
+                        
+                        &-image {
+                            width:125px;
                             height:100%;
                             border-radius:15px 0 0 15px;
                         }
 
-                        .info-container {
-                            width: calc(100% - 110px);
-                            box-sizing: border-box;
-                            height:90%;
-                            padding:0 12px 0 0;
+                        &-info{
+                            width: calc(100% - 135px);
+                            height:100%;
                             // background:red;
 
-                            h3, p {
-                                margin:0;
+                            &-container{
+                                width:90%;
+                                height:90%;
+                                box-sizing: border-box;
                                 // background:blue;
-                            }
 
-                            h3 {
-                                // white-space:normal;
-                                // word-break: break-word;
-                                overflow: hidden;
-                                // hyphens: auto;
-                                // overflow-wrap: break-word;
-                                // text-overflow: ellipsis;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 1; /* number of lines to show */
-                                        line-clamp: 1; 
-                                -webkit-box-orient: vertical;
-                                font-weight:400;
-                            }
+                                .label {
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;  
+                                    overflow: hidden;
+                                }
 
-                            div {
-                                height:fit-content;
-                                // background:blue;
-                            }
+                                .stats-container {
+                                    width:100%;
+                                    box-sizing: border-box;
+                                    height:40px;
+                                    // background:red;
 
-                            p {
-                                font-size:10px;
-                                font-weight:300;
-                            }
+                                    .stat {
+                                        width:30%;
+                                        height:100%;
+                                        padding:3px;
+                                        border-radius:5px;
+                                        background:#EEEEEE;
 
-                            a {
-                                margin:0;
-                                padding:0;
-                                text-decoration: none;
-                                color: #000000;
-                                font-weight:300;
-                                font-size:15px;
-                                // background:yellow;
-                            }
+                                        .stat-heading {
+                                            color:#3d3d3d;
+                                            font-size:7px;
+                                        }
 
+                                        .stat-info {
+                                            font-size:13px;
+                                            margin:0;
+                                        }
+                                    }
+                                }
+
+                                .action-link {
+                                    color:#000000;
+                                    text-decoration: none;
+                                    font-size:13px;
+
+                                    &-icon {
+                                        // background:red;
+                                        font-size:15px;
+                                    }
+                                }
+
+                                 
+                            }
                         }
+                    }
+
+                    &-expanded {
+                        height: fit-content;
+                        max-height:80vh;
+                        padding:8px 8px 8px 8px;
+                        border-radius:0 0 25px 25px;
+                        transition: 0.2s;
+                        overflow-y:scroll;
+                        border-bottom: 1px solid #d3d3d3;
+                        border-left: 1px solid #d3d3d3;
+                        border-right: 1px solid #d3d3d3;
                     }
                 }
 
-                .autocomplete-container-expanded {
-                    height: fit-content;
-                    max-height:80vh;
-                    padding:8px 8px 25px 8px;
-                    border-radius:0 0 25px 25px;
-                    transition: 0.2s;
-                    overflow-y:scroll;
-                    border-bottom: 1px solid #d3d3d3;
-                    border-left: 1px solid #d3d3d3;
-                    border-right: 1px solid #d3d3d3;
-                    float:right;
-                }
             }
-            .menu-container{
+            .nav-items-container{
                 width:fit-content;
                 height:100%;
                 // background:green;

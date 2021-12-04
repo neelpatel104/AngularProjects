@@ -1,6 +1,8 @@
 <main fxLayout="column" fxLayoutAlign="start center">
+	<!-- START Navigation Bar -->
 	<nav fxLayout="row" fxLayoutAlign="space-between end">
-		<div class="menu-button-icon-container" fxLayout="row" fxLayoutAlign="space-between end">
+		<!-- START Logo and Menu Icon Container -->
+		<div class="menu-logo-container" fxLayout="row" fxLayoutAlign="space-between end">
 			<button mat-icon-button fxHide.gt-md="true">
 				<mat-icon>
 					menu
@@ -8,47 +10,89 @@
 			</button>
 			<img id="logo" src="../assets/logo.png"/>
 		</div>
-    	<div class="search-menu-container" fxLayout="row" fxLayoutAlign="space-between end">
-			<div class="search-main-container" fxHide.lt-sm="true">
-				<div class="search-bar-icon-container" fxLayout="row" fxLayoutAlign="center center"
-				[ngClass]="{'search-bar-icon-container-focused' : recipeSearchQuery != ''}">
-					<input type="text" class="search-bar" #recipeSearchQueryInput
-						   placeholder="Summon what you want to eat" 
-						   [(ngModel)]="recipeSearchQuery"
-						   (input)="recipeSearchQueryChanged()"/>
-					<button mat-icon-button class="search-button">
+		<!-- END Logo and Menu Icon Container -->
+		<!-- START Searchbox - Navigation Items - Login Button Container  -->
+    	<div class="searchbox-navitems-login-container" fxLayout="row" fxLayoutAlign="space-between end">
+			<!-- START Searchbox Container -->
+			<div class="searchbox-autocomplete-container" fxHide.lt-sm="true">
+				<!-- START Searchbox - Search Icon - Container -->
+				<div 	class="searchbox-searchicon-container" 
+						fxLayout="row" 
+						fxLayoutAlign="center center"
+						[ngClass]="{'searchbox-searchicon-container-focused' : recipeSearchQuery != ''}">
+					<input 	type="text" 
+							class="searchbox" 
+							#recipeSearchQueryInput
+						   	placeholder="Summon what you want to eat" 
+						   	[(ngModel)]="recipeSearchQuery"
+						   	(input)="recipeSearchQueryChanged()"/>
+					<button mat-icon-button class="searchicon-button">
 						<mat-icon>
 							search 
 						</mat-icon>
 					</button>
 				</div>
-				<div class="autocomplete-container"  fxLayout="column" fxLayoutAlign="start center"
-				[ngClass]="{'autocomplete-container-expanded': recipeSearchQuery != ''}">
-					<h3 id="amount-recipes"
+				<!-- END Searchbox - Search Icon - Container -->
+				<!-- START Autocomplete Container -->
+				<div 	class="autocomplete-container"  
+						fxLayout="column" 	
+						fxLayoutAlign="start center"
+						[ngClass]="{'autocomplete-container-expanded': recipeSearchQuery != ''}">
+					<h3 class="autocomplete-container-amount-recipes"
 						[ngStyle]="{'opacity': recipeSearchQuery != '' ? '1' : '0', 'transition': '0.1s'}"> 
-						<b>{{recipeSearchQueryChanged().length}}</b> {{recipeSearchQueryChanged().length == 1 ? 'Recipe' : 'Recipes'}} Found </h3>
-					<div class="autocomplete-single-recipe" *ngFor="let recipe of recipeSearchQueryChanged()" fxLayout="row" fxLayoutAlign="space-between center"> 
-						<img src="{{recipe.recipe.image}}" class="image"/>
-						<div class="info-container" fxLayout="column" fxLayoutAlign="space-between start">
-							<div>
-								<h3> {{ recipe.recipe.label }} </h3>
-								<p><span><b>{{ recipe.recipe.ingredientLines.length }}</b> Ingredients</span> &#9679; <span><b>{{ recipe.recipe.totalTime }}</b> Minutes</span> </p>
+						<strong>{{recipeSearchQueryChanged().length}}</strong> {{recipeSearchQueryChanged().length == 1 ? 'Recipe' : 'Recipes'}}
+						Found 
+					</h3>	
+					<!-- START Autocomplete Container Recipe -->
+					<div 	class="autocomplete-container-recipe" 
+						*ngFor="let recipe of recipeSearchQueryChanged()" 
+						fxLayout="row" 
+						fxLayoutAlign="space-between center"> 
+						<img 	class="autocomplete-container-recipe-image" 
+								src="{{recipe.recipe.image}}" 
+								alt="{{recipe.recipe.label}}" 
+								title="{{recipe.recipe.label}}"/>
+						<div class="autocomplete-container-recipe-info" fxLayoutAlign="start center">
+							<div class="autocomplete-container-recipe-info-container" fxLayout="column" fxLayoutAlign="space-around start">
+								<span class="label"> {{recipe.recipe.label}}</span>
+								<div class="stats-container" fxLayout="row" fxLayoutAlign="space-between center">
+									<div class="stat" fxLayout="column" fxLayoutAlign="start center">
+										<span class="stat-heading"> Calories </span>
+										<span class="stat-info"> {{recipe.recipe.calories | number: '1.0-0'}}</span>
+									</div>
+									<div class="stat" fxLayout="column" fxLayoutAlign="start center">
+										<span class="stat-heading"> Time </span>
+										<span class="stat-info"> {{recipe.recipe.totalTime | number: '1.0-0'}}</span>
+									</div>
+									<div class="stat" fxLayout="column" fxLayoutAlign="start center">
+										<span class="stat-heading"> Yields </span>
+										<span class="stat-info"> {{recipe.recipe.yield | number: '1.0-0'}}</span>
+									</div>
+								</div>
+								<a href="/" class="action-link" fxLayoutAlign="center center"> Cook it <mat-icon class="action-link-icon" fxLayoutAlign="center center"> arrow_forward </mat-icon> </a>
 							</div>
-							<a fxLayout="row" fxLayoutAlign="center center" href="home"> Cook it <mat-icon> chevron_right</mat-icon> </a>
 						</div>
 					</div>
+					<!-- END Autocomplete Container Recipe -->
 				</div>
+				<!-- END Autocomplete Container -->
 			</div>
-			<div class="menu-container" fxHide.lt-lg="true" fxLayout="row" fxLayoutAlign="center center">
+			<!-- END Searchbox Container -->
+			<!-- START Navigation Items Container -->
+			<div class="nav-items-container" fxHide.lt-lg="true" fxLayout="row" fxLayoutAlign="center center">
 				<a fxLayoutAlign="center center"> Home </a>
 				<a fxLayoutAlign="center center"> Recipes </a>
 				<a fxLayoutAlign="center center"> About Us </a>
 				<a fxLayoutAlign="center center"> Contact Us </a>
-
 			</div>
+			<!-- END Navigation Items Container -->
+			<!-- START Login Button Container -->
 			<button class="login-button">
 				Log In
 			</button>
+			<!-- END Login Button Container -->
       	</div>
+		<!-- END Searchbox - Navigation Items - Login Button Container  -->
   	</nav>
+	<!-- END Navigation Bar-->
 </main>
