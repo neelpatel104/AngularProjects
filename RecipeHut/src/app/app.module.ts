@@ -12,6 +12,7 @@ import { NgModule } from '@angular/core';
 
 // Component Imports
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 // Service imports 
 
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+  HomeComponent
 	],
 	imports: [
 		AppRoutingModule,

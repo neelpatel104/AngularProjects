@@ -1,14 +1,16 @@
-<main fxLayout="column" fxLayoutAlign="start center">
+<main fxLayout="column" fxLayoutAlign="start start">
 	<!-- START Navigation Bar -->
 	<nav fxLayout="row" fxLayoutAlign="space-between end">
 		<!-- START Logo and Menu Icon Container -->
 		<div class="menu-logo-container" fxLayout="row" fxLayoutAlign="space-between end">
-			<button mat-icon-button fxHide.gt-md="true">
+			<button class="menu-button" mat-icon-button fxHide.gt-md="true">
 				<mat-icon>
 					menu
 				</mat-icon>
 			</button>
-			<img id="logo" src="../assets/logo.png"/>
+			<a class="logo" routerLink="/">
+				<img src="../assets/logo.png"/>
+			</a>
 		</div>
 		<!-- END Logo and Menu Icon Container -->
 		<!-- START Searchbox - Navigation Items - Login Button Container  -->
@@ -80,10 +82,9 @@
 			<!-- END Searchbox Container -->
 			<!-- START Navigation Items Container -->
 			<div class="nav-items-container" fxHide.lt-lg="true" fxLayout="row" fxLayoutAlign="center center">
-				<a fxLayoutAlign="center center"> Home </a>
-				<a fxLayoutAlign="center center"> Recipes </a>
-				<a fxLayoutAlign="center center"> About Us </a>
-				<a fxLayoutAlign="center center"> Contact Us </a>
+				<a class="navigation-link" fxLayoutAlign="center center"> Recipes </a>
+				<a class="navigation-link" fxLayoutAlign="center center"> About Us </a>
+				<a class="navigation-link" fxLayoutAlign="center center"> Contact Us </a>
 			</div>
 			<!-- END Navigation Items Container -->
 			<!-- START Login Button Container -->
@@ -95,4 +96,9 @@
 		<!-- END Searchbox - Navigation Items - Login Button Container  -->
   	</nav>
 	<!-- END Navigation Bar-->
+	<!-- START Children Components -->
+	<section>
+		<router-outlet></router-outlet>
+	</section>
+	<!-- END Children Components -->
 </main>
