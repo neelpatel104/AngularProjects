@@ -2,6 +2,7 @@
     height:525px;
     width:100%;
     padding:8px;
+    // background:red;
 
     .hero-text-container, .hero-image-container {
         width:100%;
@@ -11,8 +12,6 @@
 
     .hero-text-container {
         // background:red;
-        z-index: -1;
-
 
         &-padded {
             width:80%;
@@ -25,6 +24,8 @@
                 margin:0;
                 line-height:60px;
                 text-align: center;
+                z-index: 1;
+
                 // background:red;
             }
 
@@ -32,16 +33,27 @@
                 font-weight:300;
                 text-align:center;
                 margin:8px;
+                z-index: 1;
+
             }
 
             &-action-button {
                 width:fit-content;
                 height:50px;
                 border:none;
-                outline:none;
                 padding:16px;
                 margin:8px;
                 border-radius:100px;
+                transition: 0.3s;
+                color:#FFFFFF;
+                background:#000000;
+                transition:0.3s;
+                z-index: 1;
+
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: rgba(6, 6, 51, 0.6) 0px 7px 29px 0px;
+                }
             }
         }
     }
@@ -51,6 +63,52 @@
         object-fit: contain;
         padding:5%;
         z-index: -1;
+
+    }
+}
+
+.seasonal-recipes-container {
+    width:100%;
+    height: fit-content;
+    border-radius: 20px;
+    // background:yellow;
+
+   &-heading {
+        width:100%;
+        margin:0;
+        font-size:50px;
+        padding:32px 32px 0 32px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    &-items {
+        width:100%;
+        height:fit-content;
+        
+        &-double-container{
+            width:100%;
+            height:500px;
+            margin:0;
+
+            .single-season-container {
+                width:90%;
+                height:90%;
+                margin:4px;
+                transition:0.1s;
+                position: relative;
+                background:#EEEEEE;
+
+                &:hover {
+                    // transform: scale(1.05);
+                    background:#000000;
+                    box-shadow: rgba(6, 6, 51, 0.6) 0px 7px 29px 0px;
+                    transition:0.3s;
+                    z-index: 100;
+                }
+
+            }
+        }
 
     }
 }
