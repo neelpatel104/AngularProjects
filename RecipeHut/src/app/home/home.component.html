@@ -11,7 +11,7 @@
                  fxLayout="column"
                  fxLayoutAlign="center center">
                 <h1 class="hero-text-container-padded-title"> 
-                    Is it bussin?
+                    Is it <span style="color:#DD2C00;"> bussin? </span>
                 </h1>
                 <span class="hero-text-container-padded-info"> 
                     Is the food you're eating right now actually tasty? 
@@ -34,6 +34,7 @@
     <h1 class="seasonal-recipes-container-heading"
         fxLayout="row" 
         fxLayoutAlign="center end"> Seasonal Feedings </h1>
+    <span> Checkout our recipes for all seasons!</span>
     <div    class="seasonal-recipes-container-items"
             fxLayout="column"
             fxLayoutAlign="start start">
@@ -41,31 +42,58 @@
                     fxLayout="row"
                     fxLayout.lt-md="column"
                     fxLayoutAlign="center end"
-                    fxLayoutAlign.lt-md="center center">
+                    fxLayoutAlign.lt-md="space-around center">
                 <div    class="single-season-container"
-                        fxFlex="40%"
-                        fxFlex.lt-md="50%">
+                        fxFlex="50%"
+                        fxFlex.lt-md="45%"
+                        style="background-image: url('../../assets/spring.png');">
+                        <div    class="single-season-container-blurred-container"
+                                fxLayout="column"
+                                fxLayoutAlign="center center">
+                                <h1 class="heading" style="color: #00C853;"> Spring </h1>
+                                <button class="action-button" id="season-action-button-spring"> <strong> Spring Recipes </strong> </button>
+                        </div>
 
                 </div>
                 <div    class="single-season-container"
-                        fxFlex="60%"
-                        fxFlex.lt-md="50%">
-                    
+                        fxFlex="50%"
+                        fxFlex.lt-md="45%"
+                        style="background-image: url('../../assets/summer.png');">
+                        <div    class="single-season-container-blurred-container"
+                                fxLayout="column"
+                                fxLayoutAlign="center center">
+                                <h1 class="heading" style="color: #FFAB00;"> Summer </h1>
+                                <button class="action-button" id="season-action-button-summer"> <strong> Summer Recipes </strong> </button>
+                        </div>
                 </div>
             </div>
             <div    class="seasonal-recipes-container-items-double-container"
                     fxLayout="row"
                     fxLayout.lt-md="column"
                     fxLayoutAlign="center start"
-                    fxLayoutAlign.lt-md="center center">
+                    fxLayoutAlign.lt-md="space-around center">
                 <div    class="single-season-container"
-                        fxFlex="60%"
-                        fxFlex.lt-md="50%">
+                        fxFlex="50%"
+                        fxFlex.lt-md="45%"
+                        style="background-image: url('../../assets/fall.png');">
+                        <div    class="single-season-container-blurred-container"
+                                fxLayout="column"
+                                fxLayoutAlign="center center">
+                                <h1 class="heading" style="color: #FF6D00;"> Fall </h1>
+                                <button class="action-button" id="season-action-button-fall"> <strong> Fall Recipes </strong> </button>
+                        </div>
 
                 </div>
                 <div    class="single-season-container"
-                        fxFlex="40%"
-                        fxFlex.lt-md="50%">
+                        fxFlex="50%"
+                        fxFlex.lt-md="45%"
+                        style="background-image: url('../../assets/winter.png');">
+                        <div    class="single-season-container-blurred-container"
+                                fxLayout="column"
+                                fxLayoutAlign="center center">
+                                <h1 class="heading" style="color: #00B0FF;"> Winter </h1>
+                                <button class="action-button" id="season-action-button-winter"> <strong> Winter Recipes </strong> </button>
+                        </div>
                     
                 </div>
             </div>

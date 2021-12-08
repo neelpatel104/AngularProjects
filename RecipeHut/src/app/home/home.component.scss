@@ -90,23 +90,103 @@
             width:100%;
             height:500px;
             margin:0;
-
             .single-season-container {
                 width:90%;
                 height:90%;
                 margin:4px;
                 transition:0.1s;
                 position: relative;
-                background:#EEEEEE;
+                background-size: cover;
 
                 &:hover {
-                    // transform: scale(1.05);
-                    background:#000000;
-                    box-shadow: rgba(6, 6, 51, 0.6) 0px 7px 29px 0px;
+                    cursor:pointer;
                     transition:0.3s;
-                    z-index: 100;
                 }
 
+                &-blurred-container {
+                    height:100%;
+                    width: 100%;
+                    backdrop-filter: blur(10px);
+                    background:rgb(255,255,255,0.8);
+                    outline-offset: -15px;
+
+                    .heading {
+                        margin:0;
+                        text-align: center;
+                        font-size:70px;
+                        line-height:100px;
+                    }
+
+                    .action-button {
+                        width:fit-content;
+                        height:50px;
+                        margin:8px;
+                        border:none;
+                        outline:none;
+                        padding:0 16px 0 16px;
+                        border-radius:25px;
+                        transition:0.3s;
+                        background:transparent;
+                    }
+
+                    #season-action-button-spring{
+                        border: 2px solid #00C853; 
+                        color: #FFFFFF;
+                        transition:0.3s;
+                        background:#00C853;
+
+
+                        &:hover {
+                            transition:0.3s;
+                            cursor:pointer;
+                            box-shadow: #00C853 0px 0px 30px 0px;
+
+                        }
+                    }
+
+                    #season-action-button-summer{
+                        border: 2px solid #FFAB00; 
+                        color: #FFFFFF;
+                        background:#FFAB00;
+                        transition:0.3s;
+
+                        &:hover {
+                            transition:0.3s;
+                            cursor:pointer;
+                            box-shadow: #FFAB00 0px 0px 30px 0px;
+
+                        }
+                    }
+
+                    #season-action-button-fall{
+                        border: 2px solid #FF6D00; 
+                        color: #FFFFFF;
+                        background:#FF6D00;
+                        transition:0.3s;
+
+                        &:hover {
+                            transition:0.3s;
+                            cursor:pointer;
+                            box-shadow: #FF6D00 0px 0px 30px 0px;
+
+                        }
+                    }
+
+                    #season-action-button-winter{
+                        border: 2px solid #00B0FF; 
+                        color: #FFFFFF;
+                        background:#00B0FF;
+                        transition:0.3s;
+
+                        &:hover {
+                            transition:0.3s;
+                            cursor:pointer;
+                            box-shadow: #00B0FF 0px 0px 30px 0px;
+
+                        }
+                    }
+
+                }
             }
         }
 
