@@ -97,6 +97,7 @@
                 transition:0.1s;
                 position: relative;
                 background-size: cover;
+                // background-attachment: fixed;
 
                 &:hover {
                     cursor:pointer;
@@ -115,6 +116,7 @@
                         text-align: center;
                         font-size:70px;
                         line-height:100px;
+                        
                     }
 
                     .action-button {
@@ -130,11 +132,15 @@
                     }
 
                     #season-action-button-spring{
-                        border: 2px solid #00C853; 
+                        // border: 2px solid #00C853; 
                         color: #FFFFFF;
                         transition:0.3s;
-                        background:#00C853;
-
+                        background: #11998e;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to bottom right, #00C853, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to bottom right, #00C853, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                        box-shadow: #00C853 0px 0px 30px 0px;
+                        
+                        
 
                         &:hover {
                             transition:0.3s;
@@ -145,10 +151,14 @@
                     }
 
                     #season-action-button-summer{
-                        border: 2px solid #FFAB00; 
                         color: #FFFFFF;
-                        background:#FFAB00;
+                        background: #F7971E;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to bottm right, #FFAB00, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to bottom right, #FFAB00, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                        box-shadow: #FFAB00 0px 0px 30px 0px;
                         transition:0.3s;
+                        
+                        
 
                         &:hover {
                             transition:0.3s;
@@ -159,10 +169,14 @@
                     }
 
                     #season-action-button-fall{
-                        border: 2px solid #FF6D00; 
                         color: #FFFFFF;
-                        background:#FF6D00;
+                        background: #f12711;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to bottom right, #f5af19, #FF6D00);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to bottom right, #f5af19, #FF6D00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                        box-shadow: #FF6D00 0px 0px 30px 0px;
                         transition:0.3s;
+                        
+                        
 
                         &:hover {
                             transition:0.3s;
@@ -173,10 +187,14 @@
                     }
 
                     #season-action-button-winter{
-                        border: 2px solid #00B0FF; 
                         color: #FFFFFF;
-                        background:#00B0FF;
+                        background: #7F7FD5;  /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to bottom right, #00B0FF, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to bottom right, #00B0FF, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                        box-shadow: #00B0FF 0px 0px 30px 0px;
                         transition:0.3s;
+                        
+                        
 
                         &:hover {
                             transition:0.3s;
