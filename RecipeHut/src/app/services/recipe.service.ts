@@ -8,7 +8,7 @@ export class RecipeService {
 
   constructor() { }
 
-  getRecipes(){
-    return recipes.hits;
+  getRecipes(amount: string){
+    return amount === 'all' ? recipes.hits : recipes.hits.splice(0, parseInt(amount));
   }
 }

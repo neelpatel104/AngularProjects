@@ -14,7 +14,7 @@ export class AppComponent {
 	constructor(private recipeService:RecipeService){}
 
 	ngOnInit(){
-		this.recipes = this.recipeService.getRecipes();
+		this.recipes = this.recipeService.getRecipes('all');
 		console.log(this.recipes.find(recipe => recipe.recipe.label.includes(this.recipeSearchQuery)));
 	}
 
