@@ -108,26 +108,24 @@
 		fxLayoutAlign="start end"
 		fxLayoutAlign.lt-md="start end"> Top Recipes </h1>
 	<div class="top-recipes-container-items-container">
-		<div class="single-top-recipe-container">
+		<div class="single-top-recipe-container" *ngFor="let recipe of recipes, index as i">
 			<div 	class="single-top-recipe-container-flexed"
 					fxLayout="column"
 					fxLayoutAlign="start center">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
+				<img class="recipe-image" src="{{recipe.recipe.image}}" />
 				<div 	class="info-container"
-						id="top-recipe-1"
+						id="top-recipe-{{i + 1}}"
 						fxLayoutAlign="center end">
 						<div 	class="main-container"
 								fxLayout="column" 
 								fxLayoutAlign="start start">
-							<h1 class="heading"> Chickpea Salad Sandwich</h1>
+							<h1 class="heading"> {{recipe.recipe.label}} </h1>
+							<span class="author">{{recipe.recipe.source}}</span>
 							<div 	class="stars-container"
 									fxLayout="row"
 									fxLayoutAlign="start center"> 
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-empty"> star </mat-icon>
+								<mat-icon class="star-icon-checked" *ngFor="let star of [].constructor(recipe.stars)"> star </mat-icon>
+								<mat-icon class="star-icon-empty" *ngFor="let star of [].constructor(5-recipe.stars)"> star </mat-icon>
 							</div>
 							<button class="action-button">
 								Cook now
@@ -136,122 +134,5 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="single-top-recipe-container">
-			<div 	class="single-top-recipe-container-flexed"
-					fxLayout="column"
-					fxLayoutAlign="start center">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div 	class="info-container"
-						id="top-recipe-2"
-						fxLayoutAlign="center end">
-						<div 	class="main-container"
-								fxLayout="column" 
-								fxLayoutAlign="start start">
-							<h1 class="heading"> Chickpea Salad Sandwich</h1>
-							<div 	class="stars-container"
-									fxLayout="row"
-									fxLayoutAlign="start center"> 
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-empty"> star </mat-icon>
-							</div>
-							<button class="action-button">
-								Cook now
-							</button>
-						</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="single-top-recipe-container">
-			<div 	class="single-top-recipe-container-flexed"
-					fxLayout="column"
-					fxLayoutAlign="start center">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div 	class="info-container"
-						id="top-recipe-3"
-						fxLayoutAlign="center end">
-						<div 	class="main-container"
-								fxLayout="column" 
-								fxLayoutAlign="start start">
-							<h1 class="heading"> Chickpea Salad Sandwich</h1>
-							<div 	class="stars-container"
-									fxLayout="row"
-									fxLayoutAlign="start center"> 
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-empty"> star </mat-icon>
-							</div>
-							<button class="action-button">
-								Cook now
-							</button>
-						</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="single-top-recipe-container">
-			<div 	class="single-top-recipe-container-flexed"
-					fxLayout="column"
-					fxLayoutAlign="start center">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div 	class="info-container"
-						id="top-recipe-4"
-						fxLayoutAlign="center end">
-						<div 	class="main-container"
-								fxLayout="column" 
-								fxLayoutAlign="start start">
-							<h1 class="heading"> Chickpea Salad Sandwich</h1>
-							<div 	class="stars-container"
-									fxLayout="row"
-									fxLayoutAlign="start center"> 
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-empty"> star </mat-icon>
-							</div>
-							<button class="action-button">
-								Cook now
-							</button>
-						</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="single-top-recipe-container">
-			<div 	class="single-top-recipe-container-flexed"
-					fxLayout="column"
-					fxLayoutAlign="start center">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div 	class="info-container"
-						id="top-recipe-5"
-						fxLayoutAlign="center end">
-						<div 	class="main-container"
-								fxLayout="column" 
-								fxLayoutAlign="start start">
-							<h1 class="heading"> Chickpea Salad Sandwich</h1>
-							<div 	class="stars-container"
-									fxLayout="row"
-									fxLayoutAlign="start center"> 
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-checked"> star </mat-icon>
-								<mat-icon class="star-icon-empty"> star </mat-icon>
-							</div>
-							<button class="action-button">
-								Cook now
-							</button>
-						</div>
-				</div>
-			</div>
-		</div>
-		
 	</div>
 </section>   
