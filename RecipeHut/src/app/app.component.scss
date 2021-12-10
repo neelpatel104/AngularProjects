@@ -224,12 +224,11 @@ main {
                 border-radius:100px;
                 outline:none;
                 border:none;
-                color:white;
-                background: #b92b27;  
-                background: -webkit-linear-gradient(to bottom right, #1565C0, #b92b27);  
-                background: linear-gradient(to bottom right, #1565C0, #b92b27); 
+                color:#FFFFFF;
+                background:#000000;
                 cursor:pointer; 
                 transition: 0.3s;;
+
                 &:hover{
                     transition: 0.3s;
                     box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;                        

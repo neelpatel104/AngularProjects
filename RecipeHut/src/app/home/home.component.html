@@ -119,7 +119,7 @@
 						<div 	class="main-container"
 								fxLayout="column" 
 								fxLayoutAlign="start start">
-							<h1 class="heading"> {{recipe.recipe.label}} </h1>
+							<h1 class="heading"> {{recipe.recipe.label | titlecase}} </h1>
 							<span class="author">{{recipe.recipe.source}}</span>
 							<div 	class="stars-container"
 									fxLayout="row"
@@ -127,12 +127,46 @@
 								<mat-icon class="star-icon-checked" *ngFor="let star of [].constructor(recipe.stars)"> star </mat-icon>
 								<mat-icon class="star-icon-empty" *ngFor="let star of [].constructor(5-recipe.stars)"> star </mat-icon>
 							</div>
-							<button class="action-button">
-								Cook now
-							</button>
+							<a class="action-button"
+								fxLayoutAlign="center center"
+								href="http://www.google.com">
+								Cook now <mat-icon> chevron_right </mat-icon>
+							</a>
 						</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>   
+</section> 
+
+<section 	class="cooking-chef-container"
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxLayoutAlign="center center"
+			fxLayoutAlign.lt-md="start center">
+	<img class="cooking-chef-container-image" src="../../assets/cooking_chef/Chef Vector 1.svg" 
+			fxFlex="50%" 
+			fxFlex.lt-md="50%"/>
+	<div 	class="cooking-chef-container-info" 
+			fxLayout="row"
+			fxLayoutAlign="center center"
+			fxFlex="50"
+			fxFlex.lt-md="fit-content">
+		<div 	class="cooking-chef-container-info-main"
+				fxLayout="column"
+				fxLayoutAlign="start center">
+			<h1 class="heading"> Think your recipes are 
+				<span style="color: #199F9E"> WORTHY? </span></h1>
+			<span class="supporting-text"> 
+				Think your recipes are worthy enough to be put on our website? 
+				Join today and upload your best recipes and we'll let you know 
+				if people are licking their fingers after seeing your recipes 
+				or not!
+			</span>
+			<button class="action-button">
+				Join Now!
+			</button>
+		</div>
+	</div>
+</section>
+ 
