@@ -26,7 +26,7 @@
     <img    class="hero-image-container"
             fxFlex.gt-sm="50%"
             fxFlex.lt-md="50%"
-            src="../../assets/hero-2.png"/>
+            src="../../assets/hero.png"/>
 </section>
 
 <section    class="seasonal-recipes-container"
@@ -108,46 +108,115 @@
 		fxLayoutAlign="start end"
 		fxLayoutAlign.lt-md="start end"> Top Recipes </h1>
 	<div class="top-recipes-container-items-container">
-		<div class="single-top-recipe-container">
-			<div class="single-top-recipe-container-flexed">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" fxLayoutAlign="center center"/>
-				<div class="recipe-info" id="top-recipe-1">
-
+		<div class="single-top-recipe-container" *ngFor="let recipe of recipes, index as i">
+			<div 	class="single-top-recipe-container-flexed"
+					fxLayout="column"
+					fxLayoutAlign="start center">
+				<img class="recipe-image" src="{{recipe.recipe.image}}" />
+				<div 	class="info-container"
+						id="top-recipe-{{i + 1}}"
+						fxLayoutAlign="center end">
+						<div 	class="main-container"
+								fxLayout="column" 
+								fxLayoutAlign="start start">
+							<h1 class="heading"> {{recipe.recipe.label | titlecase}} </h1>
+							<span class="author">{{recipe.recipe.source}}</span>
+							<div 	class="stars-container"
+									fxLayout="row"
+									fxLayoutAlign="start center"> 
+								<mat-icon class="star-icon-checked" *ngFor="let star of [].constructor(recipe.stars)"> star </mat-icon>
+								<mat-icon class="star-icon-empty" *ngFor="let star of [].constructor(5-recipe.stars)"> star </mat-icon>
+							</div>
+							<a class="action-button"
+								fxLayoutAlign="center center"
+								href="http://www.google.com">
+								Cook now <mat-icon> chevron_right </mat-icon>
+							</a>
+						</div>
 				</div>
 			</div>
 		</div>
-		<div class="single-top-recipe-container">
-			<div class="single-top-recipe-container-flexed">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div class="recipe-info" id="top-recipe-2">
-
-				</div>
-			</div>
-		</div>
-		<div class="single-top-recipe-container">
-			<div class="single-top-recipe-container-flexed">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div class="recipe-info" id="top-recipe-3">
-
-				</div>
-			</div>
-		</div>
-		<div class="single-top-recipe-container">
-			<div class="single-top-recipe-container-flexed">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div class="recipe-info" id="top-recipe-4">
-
-				</div>
-			</div>
-		</div>
-		<div class="single-top-recipe-container">
-			<div class="single-top-recipe-container-flexed">
-				<img class="recipe-image" src="../../assets/top_recipe_2.png" />
-				<div class="recipe-info" id="top-recipe-5">
-
-				</div>
-			</div>
-		</div>
-		
 	</div>
-</section>   
+</section> 
+
+<section 	class="cooking-chef-container"
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxLayoutAlign="center center"
+			fxLayoutAlign.lt-md="start center">
+	<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+		<defs>
+			<clipPath id="shape">
+			<path id="blob"  d="M470.5,303Q453,356,418.5,400Q384,444,332,468.5Q280,493,221,487.5Q162,482,116.5,445Q71,408,40,358.5Q9,309,9,250Q9,191,40,141.5Q71,92,119.5,62Q168,32,223,26Q278,20,328.5,41.5Q379,63,422.5,100Q466,137,477,193.5Q488,250,470.5,303Z" fill="#d1d8e0"></path>
+			</clipPath>
+		</defs>
+		<image x="0" y="0" width="100%" height="100%" clip-path="url(#shape)" xlink:href="../../assets/cooking_chef.jpg" preserveAspectRatio="none"></image>
+	</svg>
+	<div 	class="cooking-chef-container-info" 
+			fxLayout="row"
+			fxLayoutAlign="center center"
+			fxFlex="50"
+			fxFlex.lt-md="fit-content">
+		<div 	class="cooking-chef-container-info-main"
+				fxLayout="column"
+				fxLayoutAlign="start center">
+			<h1 class="heading"> Think your recipes are 
+				<span style="color: #DD2C00"> Worthy? </span></h1>
+			<span class="supporting-text"> 
+				Think your recipes are worthy enough to be put on our website? 
+				Join today and upload your best recipes and we'll let you know 
+				if people are licking their fingers after seeing your recipes 
+				or not!
+			</span>
+			<button class="action-button">
+				Join Now!
+			</button>
+		</div>
+	</div>
+</section>
+
+<section	class="photos-text-container"
+			fxLayout="row"
+			fxLayout.lt-md="column"
+			fxLayoutAlign="start center">
+			<div 	class="text-container"
+					fxLayout="column"
+					fxLayoutAlign="center center"
+					fxLayoutAlign.lt-md="center center"
+					fxFlex="50%"
+					fxFlex.lt-md="fit-content"
+					fxFlexOrder="1"
+					fxFlexOrder.lt-md="2">
+				<h2> #RecipeHutRocks </h2>
+				<h1> Tell Your Friends! </h1>
+				<span> 
+					Really love RecipeHut? Why keep it a secret? 
+					Share it with your friends and family on social media 
+					with <strong>#RecipeHutRocks</strong> and let them unlock the secrets of 
+					incredible recipes!
+				</span>
+				<button class="action-button">
+					Share RecipeHut
+				</button>
+			</div>
+			<div 	class="image-container"
+					fxFlex="50%"
+					fxFlex.lt-md="fit-content"
+					fxFlexOrder="2"
+					fxFlexOrder.lt-md="1"
+					fxLayout.lt-md="column"
+					fxLayoutAlign.lt-md="start center">
+				<img src="../../assets/recipe_post.png"/>
+			</div>
+</section>
+
+<section 	class="action-form-container"
+			fxLayout="column"
+			fxLayoutAlign="start center">
+	<h1> Stay in the know!</h1>
+	<span> Join our mailing list to keep up with the new recipes everyday! </span>
+	<input type="email" placeholder="Email" />
+	<button class="action-button">
+		Join Mailing List
+	</button>
+</section>

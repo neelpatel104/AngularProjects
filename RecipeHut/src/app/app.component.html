@@ -1,5 +1,4 @@
 <main fxLayout="column" fxLayoutAlign="start start">
-	<!-- START Navigation Bar -->
 	<nav fxLayout="row" fxLayoutAlign="space-between end">
 		<!-- START Logo and Menu Icon Container -->
 		<div class="menu-logo-container" fxLayout="row" fxLayoutAlign="space-between end">
@@ -95,10 +94,50 @@
       	</div>
 		<!-- END Searchbox - Navigation Items - Login Button Container  -->
   	</nav>
-	<!-- END Navigation Bar-->
-	<!-- START Children Components -->
 	<section>
 		<router-outlet></router-outlet>
 	</section>
-	<!-- END Children Components -->
+	<footer fxLayout="column" fxLayoutAlign="center center">
+		<div 	class="logo-container"
+				fxLayoutAlign="center center">
+			<img src="../assets/logo.png" />
+		</div>
+		<div class="footer-info-container"
+				fxLayout="row"
+				fxLayout.lt-md="column"
+				fxLayoutAlign.lt-md="space-between center"
+				fxLayoutAlign="space-evenly start">
+			<div class="nav-items-container" fxLayout="column" fxLayoutAlign="start center">
+				<h3> RecipeHut </h3>
+				<a class="navigation-link" routerLink="recipes" routerLinkActive="navigation-link-active" fxLayoutAlign="center center"> Recipes </a>
+				<a class="navigation-link" fxLayoutAlign="center center"> About Us </a>
+				<a class="navigation-link" fxLayoutAlign="center center"> Contact Us </a>
+
+			</div>
+			<div class="contact-container" fxLayout="column" fxLayoutAlign="start center">
+				<h3> Contact Us </h3>
+				<a href="mailto:webmaster@example.com">recipehutcs@recipehut.com</a>
+				<a href="tel:+11234567890">+1 123-456-7890</a>
+				<div 	class="social-media-container"
+						fxLayout="row"
+						fxLayoutAlign="space-evenly center">
+					<img src="../assets/facebook_icon.svg" />
+					<img src="../assets/instagram_icon.svg" />
+					<img src="../assets/twitter_icon.png" />
+					<img src="../assets/messenger_icon.png" />
+					<img src="../assets/youtube_icon.png" />
+				</div>
+			</div>
+			<div class="address-container" fxLayout="column" fxLayoutAlign="start center">
+				<h3> Address </h3>
+				<span> 12345 Joe St.</span> 
+				<span> Narnia, NA</span> 
+				<span> USN</span> 
+			</div>
+		</div>
+		<div 	class="footer-bar-container"
+				fxLayoutAlign="center center">
+				&copy; RecipeHut. All Rights Reserved. Designed by Neel Patel
+		</div>
+	</footer>
 </main>

@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   constructor(private recipeService : RecipeService) { }
 
   ngOnInit(): void {
-		this.recipes = this.recipeService.getRecipes('5');
+		this.recipes = this.recipeService.getRecipes('10');
+    for (let recipe of this.recipes){
+      recipe.stars = Math.floor(Math.random() * (5 - 4 + 1) + 4);
+    }
   }
 
 }
