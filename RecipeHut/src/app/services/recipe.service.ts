@@ -9,6 +9,6 @@ export class RecipeService {
   constructor() { }
 
   getRecipes(amount: string){
-    return amount === 'all' ? recipes.hits : recipes.hits.splice(0, parseInt(amount));
+    return amount === 'all' ? [...recipes.hits] : [...recipes.hits].splice(0, parseInt(amount));
   }
 }

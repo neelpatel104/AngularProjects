@@ -1,0 +1,59 @@
+<section    class="recipe-otd-container"
+            fxLayout="row"
+            fxLayout.lt-md="column"
+            fxLayoutAlign.lt-md="start center"
+            fxLayoutAlign="space-between stretch"> 
+    <div    class="image-container"
+            fxFlex="50%" 
+            fxFlex.lt-md="fit-content">
+            <img src="../../assets/recipe_otd.png" />
+            <div    class="stat-container"
+                    fxLayout="column"
+                    fxLayoutAlign="space-between start">
+               <button>
+                   Recipe Of The Day
+               </button>
+               <div class="stars-container"
+                    fxLayout="row">
+                    <mat-icon class="single-star" *ngFor="let num of [].constructor(5)"> star </mat-icon>
+                    <span> 2.5k </span>
+               </div>
+            </div>
+    </div>
+    <div    class="info-container"
+            fxFlex="48%" 
+            fxFlex.lt-md="fit-content"
+            fxLayout="column"
+            fxLayoutAlign="space-between start">
+        <h1>
+            {{recipe.recipe.label}}
+        </h1>
+        <span class="author">
+            {{recipe.recipe.source}}
+        </span>
+        <div class="stats-container">
+            <mat-chip-list>
+                <mat-chip> 
+                    <mat-icon matChipAvatar >
+                        supervised_user_circle
+                    </mat-icon>
+                    {{recipe.recipe.yield}} people
+                </mat-chip>
+                <mat-chip> 
+                    <mat-icon matChipAvatar >
+                        watch_later
+                    </mat-icon>
+                    {{recipe.recipe.totalTime}} mins
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="ingredients-container">
+            <h4> Ingredients </h4>
+            <div class="ingredients">
+                <div class="ingredient" *ngFor="let ingr of recipe.recipe.ingredients" >
+                    <img title="{{ingr.food | titlecase}}" alt="{{ingr.food}}" src="{{ingr.image}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
